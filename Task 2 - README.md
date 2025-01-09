@@ -1,42 +1,51 @@
 # Task 2: Rule-Based System for Automotive Diagnostics
-This project demonstrates a rule-based expert system designed for diagnosing common automotive issues. The system simulates a reasoning process based on rules defined for various conditions of the vehicle's components.
+
+## Overview
+This program demonstrates a rule-based expert system for diagnosing common automotive issues. By analyzing user input, the system applies pre-defined diagnostic rules to identify potential problems based on the conditions of the vehicle's components.
 
 ## Features
-- **Rule-Based System:** Implements multiple diagnostic rules for identifying automotive issues.
-- **Automated Testing:** Evaluates all combinations of inputs to ensure the robustness of the rule set.
-- **Catch-All Rule:** Identifies unknown or unhandled conditions and suggests further diagnostics.
+- **Interactive User Input**: Prompts users to answer specific questions about their vehicle's condition.
+- **Rule-Based Diagnostics**: Applies logic to determine issues such as faulty spark plugs, battery problems, or a malfunctioning starter motor.
+- **Catch-All Rule**: Handles unknown conditions and suggests further diagnostics.
+- **Expandable Design**: Additional rules can be seamlessly integrated into the system.
 
-## Rules
-1. If the engine gets gas and turns over, the problem is the **spark plugs**.
-2. If the engine doesn't turn over and lights don't come on, the problem is the **battery or cables**.
-3. If the engine doesn't turn over and lights come on, the problem is the **starter motor**.
-4. If there is gas in the fuel tank and carburetor, the engine is considered to be **getting gas**.
-5. For any other condition, the system outputs that the situation is **unknown** and suggests further diagnostics.
+## Diagnostic Rules
+1. If the engine gets gas and turns over, the problem is the spark plugs.
+2. If the engine doesn't turn over and the lights don't come on, the problem is the battery or cables.
+3. If the engine doesn't turn over but the lights come on, the problem is the starter motor.
+4. If there is gas in the fuel tank and carburetor, the engine is considered to be getting gas.
+5. For any other condition, the system outputs that the situation is unknown and suggests further diagnostics.
+
+## Example Input/Output
+### Input:
+- Does the engine turn over? **yes**
+- Do the lights come on? **yes**
+- Is there gas in the fuel tank? **no**
+- Is there gas in the carburetor? **no**
+
+### Output:
+> The situation is unknown. Further diagnostics required.
+
+### Input:
+- Does the engine turn over? **no**
+- Do the lights come on? **yes**
+- Is there gas in the fuel tank? **yes**
+- Is there gas in the carburetor? **yes**
+
+### Output:
+> The problem is the starter motor.
 
 ## Instructions
-1. Open in Visual Studio Code and Jupyter Notebook.
-2. Run the code cell to execute the rule-based system.
-3. Review the output for diagnostic insights.
+### Environment
+- Ensure Python 3.x is installed.
+- Compatible with text editors like Visual Studio Code or Jupyter Notebook.
 
-## Example Outputs
+### Execution
+- Run the script using Python.
+- Follow the prompts and provide `yes` or `no` answers to each question.
 
-- **Input:** 
-  - `engine_turns_over = False`
-  - `lights_come_on = True`
-  - `gas_in_fuel_tank = True`
-  - `gas_in_carburetor = True`
-  - **Output:** "The problem is the starter motor."
-
-- **Input:**
-  - `engine_turns_over = True`
-  - `lights_come_on = True`
-  - `gas_in_fuel_tank = False`
-  - `gas_in_carburetor = False`
-  - **Output:** "The situation is unknown. Further diagnostics required."
-
-## Dependencies
-- Python 3.x
-- `itertools` library (standard Python library)
+### Output
+The program will diagnose the issue based on the input provided and display the result.
 
 ## Code
 Refer to the `Task_2_Automotive_Diagnostics.ipynb` file for the complete implementation.
